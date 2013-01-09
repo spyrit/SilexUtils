@@ -1,0 +1,11 @@
+nbproject
+.cache
+.settings
+.project
+.buildpath
+.DS_Store
+__MACOSX
+om
+map
+*.php~
+vendor
