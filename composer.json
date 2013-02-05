@@ -8,12 +8,6 @@
             "email": "charles.sanquer@spyrit.net"
         }
     ],
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.spyrit.net"
-        }
-    ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
