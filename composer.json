@@ -8,6 +8,7 @@
             "email": "charles.sanquer@spyrit.net"
         }
     ],
+    "license": "LGPL-3.0+",
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
