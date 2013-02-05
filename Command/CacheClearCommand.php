@@ -9,7 +9,7 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 
 /**
- * Spyrit SilexSandbox twig cache cleaning command
+ * Spyrit Silex Tools cache cleaning command
  *
  * @author Charles Sanquer <charles.sanquer@spyrit.net>
  *
@@ -34,7 +34,13 @@ class CacheClearCommand extends Command
         
         $output->writeln('Clearing Application cache ...');
         
-        $finder->directories()->depth('== 0')->in($this->getApplication()->getProjectDir().'/app/cache');
+        $cacheDir = $this->getApplication()->getProjectDir().'/app/cache';
+        
+        if (!file_exists($cacheDir)) {
+            $fs->mkdir($cacheDir);
+        }
+        
+        $finder->directories()->depth('== 0')->in($cacheDir);
         foreach ($finder as $file) {
             $output->writeln('remove '.$file->getRelativePathname());
             $fs->remove($file->getRealpath());
